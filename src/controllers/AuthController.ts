@@ -3,23 +3,6 @@ import { userRepository } from "../repositories/userRepository";
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 
-type Poke = {
-    name: string,
-    height: number,
-    weight: number,
-    abilities: PokemonAbility[]
-}
-
-type PokemonAbility = {
-    is_hidden: boolean,
-    slot: number,
-    ability: Ability
-}
-
-type Ability = {
-    name: string
-}
-
 export class AuthController {
     async login(req: Request, res: Response) {
         const {email, password} = req.body;
